@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const program = require("caporal");
+const pkg = require("../package.json");
+const screenshot = require("../index");
+
+program.version(pkg.version).description(pkg.description);
+
+program
+  .argument("<url>", "take screenshot of url")
+  .action(function(argv, options) {
+    screenshot({
+      url: argv.url,
+      mobile: options.mobile
+    })
+      .then(() => process.exit())
+      .catch(() => process.exit());
+  });
+
+program.parse(process.argv);
