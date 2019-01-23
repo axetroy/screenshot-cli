@@ -8,13 +8,17 @@ program.version(pkg.version).description(pkg.description);
 
 program
   .argument("<url>", "take screenshot of url")
+  .option("--delay <delay>", "delay ms before take screenshot", program.INT)
   .action(function(argv, options) {
     screenshot({
       url: argv.url,
-      mobile: options.mobile
+      delay: options.delay
     })
       .then(() => process.exit())
-      .catch(() => process.exit());
+      .catch(err => {
+        console.err(err);
+        process.exit();
+      });
   });
 
 program.parse(process.argv);

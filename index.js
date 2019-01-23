@@ -4,9 +4,18 @@ const whichChrome = require("which-chrome");
 const downloadFolderPath = require("downloads-folder")();
 const { format } = require("date-fns");
 
+function sleep(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+}
+
 async function screenshot(options) {
   const chromePath = whichChrome.Chrome || whichChrome.Chromium;
   const url = options.url;
+  const delay = options.delay || 0;
 
   if (!chromePath) {
     throw new Error(`No Chrome installation found - used path ${chromePath}`);
@@ -27,6 +36,8 @@ async function screenshot(options) {
       height: document.body.scrollHeight
     };
   });
+
+  await sleep(delay);
 
   const dateLayout = "YYYY-MM-DD_HH.mm.ss";
   const timestamp = format(new Date(), dateLayout);
