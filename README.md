@@ -9,6 +9,10 @@ screenshot https://www.google.com
 npx screenshot https://www.google.com
 ```
 
+## Dependency
+
+Make sure you have ``Chrome`` Or ``Chromium`` installed
+
 ## License
 
 The [MIT License](https://github.com/axetroy/screenshot-cli/blob/master/LICENSE)
