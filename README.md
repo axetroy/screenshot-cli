@@ -6,7 +6,7 @@ npm install @axetroy/screenshot -g
 screenshot https://www.google.com
 
 # or
-npx screenshot https://www.google.com
+npx @axetroy/screenshot https://www.google.com
 ```
 
 ## Dependency
