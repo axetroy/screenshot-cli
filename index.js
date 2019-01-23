@@ -57,7 +57,7 @@ async function screenshot(options) {
     }
   });
 
-  console.log(`Screenshot have been download in "${imagePath}"`);
+  console.log(`Screenshot have been downloaded at "${imagePath}"`);
 }
 
 module.exports = screenshot;
