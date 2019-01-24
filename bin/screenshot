@@ -16,7 +16,7 @@ program
     })
       .then(() => process.exit())
       .catch(err => {
-        console.err(err);
+        console.error(err);
         process.exit();
       });
   });
