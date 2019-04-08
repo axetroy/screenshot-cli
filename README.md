@@ -1,5 +1,7 @@
 # take screenshot for a website with cli
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/screenshot-cli.svg)](https://greenkeeper.io/)
+
 ```bash
 npm install @axetroy/screenshot -g
 
